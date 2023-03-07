@@ -1,8 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-import Home from "./components/screens/Homepage";
 import { Route, Routes } from "react-router-dom";
 import DefaultLayout from "./components/layout";
+import "../src/assets/styles/app.scss";
 
 function App() {
   return (

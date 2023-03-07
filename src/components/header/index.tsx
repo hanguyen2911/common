@@ -9,26 +9,17 @@ const Header = () => {
 
   let activeClassName = "underline";
   return (
-    // <header>
-    //   <div>
-    //     <NavLink to="/" className="font-bold text-xxl">
-    //       Logo
-    //     </NavLink>
-
-    //   </div>
-    // </header>
-    <nav
-      className={`hidden sm:flex flex-wrap items-center justify-center md:ml-2 md:py-1 md:pl-2 order-3 ${styles.header}`}
-    >
-      <div>
-        <NavLink to="/" className="font-bold text-xxl">
-          Logo
-        </NavLink>
-      </div>
+    <nav className={` ${styles.header}`}>
       <ul>
+        {/* <li>
+          <NavLink to="/" className={`${styles.nav_link}font-bold text-xxl`}>
+            Logo
+          </NavLink>
+        </li> */}
         <li>
           <NavLink
             to="/"
+            className={`${styles.nav_link}`}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Home
@@ -36,16 +27,18 @@ const Header = () => {
         </li>
         <li>
           <NavLink
+            className={`${styles.nav_link}`}
             to="/about"
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            // className={({ isActive }) =>
+            //   isActive ? activeClassName : undefined
+            // }
           >
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="tasks">
+          <NavLink to="tasks" className={`${styles.nav_link}`}>
             {({ isActive }) => (
               <span className={isActive ? activeClassName : undefined}>
                 Tasks

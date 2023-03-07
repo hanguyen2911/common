@@ -2,7 +2,7 @@ import React from "react";
 interface IInputFieldProps {
   className?: string;
   value: string | number;
-  onChange: () => any;
+  onChange: () => Function;
   maxLength?: number;
   placeholder?: string;
   type?: "number" | "text" | "password";
@@ -16,9 +16,7 @@ const InputField = (props: IInputFieldProps) => {
         className={`${props.className}`}
         value={props.value}
         type={props.type}
-        onChange={() => {
-          props.onChange;
-        }}
+        onChange={() => props.onChange}
         maxLength={props.maxLength}
         placeholder={props.placeholder}
         readOnly={props.readonly}
